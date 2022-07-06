@@ -29,7 +29,7 @@ class Data_Loader:
         return len(self.files)
     
     def get(self, i):
-        return np.asarray(Image.open(self.files[i]))
+        return np.asarray(Image.open(self.files[i]).convert('RGB'))
     
     def write(self, i, data):
         name = self.file_names[i]
