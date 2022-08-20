@@ -24,7 +24,8 @@ class DataLoader:
         self.file_names = os.listdir(self.input_path)
 
         # ignore ipynb_checkpoints:
-        self.file_names.remove('.ipynb_checkpoints')
+        if '.ipynb_checkpoints' in self.file_names:
+            self.file_names.remove('.ipynb_checkpoints')
 
         self.files = [os.path.join(self.input_path, file) for file in self.file_names]
 
